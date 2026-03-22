@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanoid Robot Program | RoboCup</title>
+    <link rel="stylesheet" href="./Humanoid Robot Program _ RoboCup_files/bootstrap.min.css">
+    <link rel="icon" href="https://robotprogram.robocup.org/static/favicon.ico">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2e8b57;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 15px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .card {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            color: #2e8b57;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        body h4 {
+            color: #000000;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        body h3 {
+            margin-top: 20px;
+            color: #2e8b57;
+        }
+
+        .card-header {
+            background-color: #2e8b57;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #246a47;
+        }
+
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+        }
+
+        .robot-logo,
+        .robot-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .robot-logo {
+            margin-bottom: 10px;
+            /* Space between logo and robot image */
+            width: 200px;
+            /* Thumbnail size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        .general-conditions {
+            background-color: #e9f7e8;
+            border-left: 4px solid #2e8b57;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            /* Ensures borders are joined together */
+            width: 100%;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #808080   ;
+            /* Darker and thicker border */
+            padding: 8px;
+            vertical-align: middle;  /* Vertical centering */
+        }
+
+        table th {
+            background-color: #808080;
+            color: white;
+            text-align: left;
+        }
+
+        table td {
+            background-color: #f9f9f9;
+        }
+
+        table tr:nth-child(even) td {
+            background-color: #f1f1f1;
+            /* Alternate row colors for better readability */
+        }
+
+        .table th {
+            background-color: #b8b5b5;
+            color: #ffffff;
+        }
+         /* New section styles */
+         .agreement-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .agreement-section h2 {
+            color: #2e8b57;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .agreement-section p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .agreement-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1129.0" data-gr-ext-installed="">
+    <!-- Header Section -->
+    <header>
+        <h1>RoboCup Humanoid Robot Program</h1>
+		<h5><i><b>Update for 2026</b></i></h5>
+        <p>Opportunities for Teams to Access Cutting-Edge Humanoid Robots</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Program Overview Section -->
+        <section class="mb-5">
+            <h2 class="text-center text-success">Program Overview</h2>
+			<p>The RoboCup Federation has partnered with top humanoid robot manufacturers<strong> (Booster, Fourier and Unitree) </strong>to offer exclusive access to cutting-edge humanoid robots at discounted rates for participating teams. This initiative aims to promote participation in RoboCup 2026, which will take place in Incheon, South Korea.
+            </p>
+        </section>
+
+        <!-- General Conditions Section (applies to all robots) -->
+        <section class="general-conditions">
+            <h3 class="text-success">General Conditions for All Robots</h3>
+            <p><strong>Participation:</strong></p>
+            <p>Teams that purchased any of the humanoid robots under this agreement need to participate in the RoboCup
+                International event or major Super-Regional or official RoboCup Regional Competitions.</p>
+            <p><strong>Selection:</strong></p>
+            <p><strong>Existing</strong> RoboCup teams (including Soccer Simulation teams) can directly reach out to the vendor.</p>
+            <p><strong>New</strong> RoboCup teams will need to apply to this program (see Apply button at the bottom of this page).</p>
+            <p><strong>Notice:</strong></p>
+            <p>League rules and requirements apply!</p>
+        </section>
+
+        <!-- Robot Cards -->
+        <section>
+            <h2 class="text-center text-success mb-4">Robot Details and Offers</h2>
+
+            <!-- Robot 1: Booster T1 -->
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center p-3">
+                        <img src="./Humanoid Robot Program _ RoboCup_files/BoosterT1andK1.png" alt="Booster Robots" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-header">Booster Robots</div>
+                        <div class="card-body">
+                            <img src="./Humanoid Robot Program _ RoboCup_files/booster-logo.png" alt="Booster Logo" class="robot-logo">
+
+                            <h4>Offering Condition for Selected Teams:</h4>
+                            <p>Special prices for RoboCup teams of Booster T1 and K1 robots (with integrated development tools and motion
+                                perception SDK for free) at:</p>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>MSRP</th>
+										<th>RoboCup Discounted Price (USD)</th>
+										<th>Team-Package (x5) Price (USD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>T1 RoboCup Edition</b></td>
+                                        <td><b>$44,700</b></td>
+										<td><b>$20,400</b></td>
+									</tr>
+                                    <tr>
+                                        <td><i>Upgrade to a dual-board setup</i></td>
+                                        <td><i>+$6,300</i></td>
+										<td><i>+$4,200</i></td>
+									</tr>
+									<tr>
+                                        <td><b>K1 RoboCup Edition</b></td>
+                                        <td><b>$14,999</b></td>
+										<td><b>$9,999</b></td>
+										<td><b>$47,490</b></td>
+									</tr>
+                                    <tr>
+                                        <td><i>Upgrade to AGX Orin 32Gb</i></td>
+                                        <td><i>+$3,000</i></td>
+										<td><i>+$2,000</i></td>
+									</tr>
+                                </tbody>
+                            </table>
+                            <li>Including 3 years warranty starting on the shipping date and one set of charger and
+                                battery. Shipping and taxes are not included.</li>
+                           </div>
+                        <a href="https://www.booster.tech/booster-k1/" class="btn btn-custom mt-3">Learn More about K1</a>
+						<a href="https://www.booster.tech/booster-t1/" class="btn btn-custom mt-3">Learn More about T1</a>
+						<a href="https://booster.feishu.cn/wiki/DYu8wurUFi2dXekyxs3cQvAjnmb" class="btn btn-custom mt-3"> Specs of the robots and 2025 quotation</a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Robot 2: Fourier GR-1 -->
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center p-3">
+                        
+                        <img src="./Humanoid Robot Program _ RoboCup_files/fourier-robot.png" alt="Fourier GR-1 Robot" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-header">Fourier GR-1</div>
+                        <div class="card-body">
+                            <img src="./Humanoid Robot Program _ RoboCup_files/fourier-logo.png" alt="Fourier GR-1 Logo" class="robot-logo">
+                            <h4>Offering Condition for Selected Teams:</h4>
+                            <p>
+                                <strong>Fourier is offering special RoboCup competition versions of their robots:</strong>
+                              </p>
+                              <ul>
+                                <li><strong>Fourier GR-1 (Competition Version)</strong></li>
+                                <li><strong>Fourier GR-1 Mini (Competition Version)</strong></li>
+                              </ul>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>League</th>
+                                        <th>Fourier competition versions robot</th>
+                                        <th>Regular Price (USD)</th>
+                                        <th>Special Offer Price (USD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2">RoboCup@Home</td>
+                                        <td>Single Unit (GR-1)</td>
+                                        <td>$200,000</td>
+                                        <td>$50,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2 units (GR-1)</td>
+                                        <td>$400,000</td>
+                                        <td>$90,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Humanoid League</td>
+                                        <td>Single Unit (GR-1)</td>
+                                        <td>$200,000</td>
+                                        <td>$50,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3 units (GR-1)</td>
+                                        <td>$600,000</td>
+                                        <td>$120,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Humanoid League</td>
+                                        <td>Single Unit (GR-1 Mini)</td>
+                                        <td>$120,000</td>
+                                        <td>$30,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 units (GR-1 Mini)</td>
+                                        <td>$600,000</td>
+                                        <td>$100,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="https://www.fftai.com/products-gr1" class="btn btn-custom mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robot 3: Unitree G1 -->
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center p-3">
+                        
+                        <img src="./Humanoid Robot Program _ RoboCup_files/unitree-G1andR1.png" alt="Unitree Robots" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-header">Unitree G1 and R1 Robots</div>
+                        <div class="card-body">
+                            <img src="./Humanoid Robot Program _ RoboCup_files/unitree-logo.png" alt="unitree Logo" class="robot-logo">
+                            
+                            <h4>Offering Condition for RoboCup Teams:</h4>
+							<h5> G1 Robot </h5>
+							<table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><strong>Unitree G1 Humanoid Robot (competition version) (1 Unit)</strong></th>
+                                        <th>Price (USD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>For Public</td>
+                                        <td>$35,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Special Offer A for RoboCup Teams<br>
+                                            <small>(Available for purchases made before June 30th, 2026)</small>
+                                        </td>
+                                        <td>$21,675</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Special Offer B for RoboCup Teams<br>
+                                            <small>(Available for purchases made after June 30th, 2026)</small>
+                                        </td>
+                                        <td>$24,565</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+							<li>The package includes 3 years warranty starting on the shipping date. The package does not include shipping and taxes.
+                            </li>
+							<h5> R1 Robot </h5>
+							<table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><strong>Unitree R1 Humanoid Robot (Edu Smart version)</strong></th>
+                                        <th>Regular Price (USD)</th>
+										<th>Special Offer Price (USD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Single Unit (R1 Edu Smart)</td>
+                                        <td>$18,000</td>
+										<td>$11,475</td>
+                                    </tr>
+									<tr>
+                                        <td>2 units (R1 Edu Smart)</td>
+                                        <td>$36,000</td>
+										<td>$21,674</td>
+                                    </tr>
+									<tr>
+                                        <td>4 units (R1 Edu Smart)</td>
+                                        <td>$72,000</td>
+										<td>$40,800</td>
+                                    </tr>
+									<tr>
+                                        <td>6 units (R1 Edu Smart)</td>
+                                        <td>$108,000</td>
+										<td>$57,378</td>
+                                    </tr>
+									<tr>
+                                        <td>8 units (R1 Edu Smart)</td>
+                                        <td>$144,000</td>
+										<td>$76,504</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+							<li>with integrated development tools and motion perception SDK or free. It does not include shipping and taxes.
+                            </li>
+                        </div>
+                        <a href="https://www.unitree.com/robocup" class="btn btn-custom mt-3">Learn More about Unitree robots</a>
+						<a href="./Humanoid Robot Program _ RoboCup_files/UnitreeOffer2026.pdf" class="btn btn-custom mt-3">R1 Edu Smart Robot SPECS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+         <!-- Other Conditions Section -->
+        <section class="general-conditions">
+            <h2>Other Conditions of the Agreement</h2>
+            <p><strong>Company's Support:</strong></p>
+            <p>If any defect is detected in any robot purchased from The Company (whether it is the Booster T1, Fourier GR-1, Unitree G1, or any other model covered under this agreement), The Company agrees to provide repair support, provided that the defect is not due to the team's willful misconduct or negligence. The conditions for the repair support are outlined below:</p>
+            <ul>
+                <li>Online support will be provided to the team if they choose to repair the defect themselves. The Company will supply the necessary parts for the repair free of charge.</li>
+                <li>If the team chooses to send the robot to The Company for repair, the repair will be conducted free of charge.</li>
+                <li>Shipping costs for repairs will be borne by the team. However, if the defect is reported within six months from the completion of delivery, The Company will cover the shipping cost.</li>
+                <li>If a defect occurs during the RoboCup competition period at the competition venue, The Company will provide free repair support, unless the defect is due to the buyer’s willful misconduct or negligence.</li>
+            </ul>
+        </section>
+
+        <!-- Apply Now Section -->
+        <section class="text-center my-5">
+            <h2 class="text-success">Apply Now</h2>
+            <p>If your team is interested in purchasing or leasing one of these robots, please complete the application
+                form linked below.</p>
+            <a href="https://cloud.robocup.org/apps/forms/s/aDNzD8QY7p4XXD7b4HZj4pBN" class="btn btn-custom btn-lg">Apply Now</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 RoboCup Federation | <a href="https://www.robocup.org/">Visit RoboCup.org</a></p>
+    </footer>
+    <script src="./Humanoid Robot Program _ RoboCup_files/bootstrap.bundle.min.js.baixados"></script>
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
